@@ -6,7 +6,7 @@ def get_indices_of_item_weights(weights, length, limit):
     # return a tuple of integers of the form `(zero, one)`
     # higher value in the [0] position
 
-    # From Hints
+    # From Hints:
     # store weight as key?
     # store weight index as value?
     # check to see if table has `limit-weight'
@@ -17,12 +17,16 @@ def get_indices_of_item_weights(weights, length, limit):
         cache[weights[i]] = i
     for w in range(length):
         weight_diff = limit - weights[w]
+        
         if weight_diff in cache:
-            # assuming ordered weights
-            return(max(w, cache[weight_diff]), min(w, cache[weight_diff]))
+            higher = max(w, cache[weight_diff])
+            # print("h", higher)
+            lower = min(w, cache[weight_diff])
+            # print("l", lower)
+            return(higher, lower)
 
     return None
 
 
-# weights = [4, 6, 10, 15, 16]
-# print(get_indices_of_item_weights(weights, 5, 21))
+weights = [4, 6, 10, 15, 16]
+print(get_indices_of_item_weights(weights, 5, 21))
