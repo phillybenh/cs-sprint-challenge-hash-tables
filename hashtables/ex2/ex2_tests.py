@@ -11,7 +11,9 @@ class TestEx2(unittest.TestCase):
         ticket_3 = Ticket("DCA", "NONE")
 
         tickets = [ticket_1, ticket_2, ticket_3]
-
+        # #################
+        # print(reconstruct_trip(tickets, 3))
+        # #################
         expected = ["PDX", "DCA", "NONE"]
         result = reconstruct_trip(tickets, 3)
 
